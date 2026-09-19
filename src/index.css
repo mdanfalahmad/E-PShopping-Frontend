@@ -52,6 +52,16 @@ body { margin: 0; min-width: 320px; }
 .login-alert { margin-bottom: 14px; font-size: 12px; }
 .signup-prompt { margin-top: 28px !important; color: #82908b; text-align: center; font-size: 13px !important; }
 .login-legal { color: #8b9893; text-align: center; font-size: 11px !important; }
+.forgot-dialog .MuiPaper-root { border-radius: 16px; }
+.forgot-dialog .MuiDialogTitle-root { padding: 28px 28px 8px; color: #172b2a; font-size: 24px; font-weight: 700; }
+.forgot-dialog .MuiDialogContent-root { padding: 8px 28px 28px; }
+.forgot-dialog-copy { margin-bottom: 20px !important; color: #788682; font-size: 14px !important; line-height: 1.55; }
+.forgot-dialog .MuiTextField-root { margin-bottom: 14px; }
+.forgot-dialog-button { margin-top: 8px !important; }
+.forgot-success { text-align: center; }
+.forgot-success .form-icon { margin: 4px auto 4px; }
+.forgot-success .MuiDialogTitle-root { padding-top: 8px; }
+.register-field-error { margin: 3px 14px 0; color: #d32f2f; font-size: 12px; }
 
 @media (max-width: 760px) {
   .login-page { padding: 24px 16px; }
