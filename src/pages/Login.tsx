@@ -77,7 +77,7 @@ function Login() {
     setForgotStep("success");
   };
 
-  const handleLogin = (e: FormEvent<HTMLFormElement>) => {
+  const handleLogin = async(e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitted(true);
     setError("");
@@ -88,7 +88,13 @@ function Login() {
     }
 
     setIsLoading(true);
-    window.setTimeout(() => setIsLoading(false), 900);
+    const response = await fetch("http://localhost:5000/api/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
+    const data = await response.json();
+    setIsLoading(false);
   };
 
   return (

@@ -32,7 +32,7 @@ function Register() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
 
-  const handleRegister = (event: FormEvent<HTMLFormElement>) => {
+  const handleRegister = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSubmitted(true);
     setError("");
@@ -43,7 +43,12 @@ function Register() {
     }
 
     setIsLoading(true);
-    window.setTimeout(() => setIsLoading(false), 900);
+    const response =await fetch("http://localhost:5000/api/auth/register",{
+        method : "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, password, role }),
+        });
+    setIsLoading(false);
   };
 
   const handleRoleChange = (event: SelectChangeEvent) => {
